@@ -12,9 +12,7 @@ def fetch_recipes(ingredients):
         'number': 5,  # Limit to 5 results for simplicity
         'apiKey': API_KEY
     }
-    
     response = requests.get(API_URL, params=params)
-    
     # Ensure the response is in JSON format and handle errors
     try:
         recipes = response.json()  # Parse JSON
@@ -32,7 +30,7 @@ if st.button('Search'):
     if ingredients:
         recipes = fetch_recipes(ingredients)
 
-        
+
         if recipes:
             if isinstance(recipes, list):  # Ensure recipes is a list
                 for recipe in recipes:
